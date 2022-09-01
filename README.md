@@ -19,6 +19,8 @@ ______________________________________________________
 
 # RomCom  
 
+This is a pulse check to make sure my git workflow is working
+
 ### Abstract:
 [//]: <> (Briefly describe what you built and its features. What problem is the app solving? How does this application solve that problem?)
 
