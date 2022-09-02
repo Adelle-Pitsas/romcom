@@ -75,6 +75,13 @@ function makeNewBook() {
   titles.push(inputTitle.value);
   descriptors.push(inputDescriptor1.value);
   descriptors.push(inputDescriptor2.value);
+  var newCover = new Cover(inputCover.value, inputTitle.value, inputDescriptor1.value, inputDescriptor2.value)
+  fullFormView.classList.add("hidden")
+  homeView.classList.remove("hidden")
+  coverImgSrc.src = inputCover.value
+  coverTitle.innerText = inputTitle.value
+  tagLine1.innerText = inputDescriptor1.value
+  tagLine2.innerText = inputDescriptor2.value
 }
 
 
