@@ -11,6 +11,11 @@ var homeButton = document.querySelector(".home-button")
 var viewSavedButton = document.querySelector(".view-saved-button")
 var saveCoverButton = document.querySelector(".save-cover-button")
 var savedView = document.querySelector(".saved-view")
+var inputCover = document.querySelector("#cover")
+var inputTitle = document.querySelector("#title")
+var inputDescriptor1 = document.querySelector("#descriptor1")
+var inputDescriptor2 = document.querySelector("#descriptor2")
+var createNewBookButton = document.querySelector(".create-new-book-button")
 // We've provided a few variables below
 var savedCovers = [
   new Cover("http://3.bp.blogspot.com/-iE4p9grvfpQ/VSfZT0vH2UI/AAAAAAAANq8/wwQZssi-V5g/s1600/Do%2BNot%2BForsake%2BMe%2B-%2BImage.jpg", "Sunsets and Sorrows", "sunsets", "sorrows")
@@ -23,7 +28,11 @@ randomCoverButton.addEventListener("click", generateRandomCover);
 
 makeCoverButton.addEventListener("click", getFormView);
 
-viewSavedButton.addEventListener("click", getSavedCoverView)
+viewSavedButton.addEventListener("click", getSavedCoverView);
+
+homeButton.addEventListener("click", getHomeView);
+
+createNewBookButton.addEventListener("click", makeNewBook)
 
 // Create your event handlers and other functions here 👇
 function getRandomIndex(array) {
@@ -37,7 +46,7 @@ function generateRandomCover() {
   tagLine2.innerText = descriptors[getRandomIndex(descriptors)]
 }
 
-function getFormView () {
+function getFormView() {
     fullFormView.classList.remove("hidden")
     homeView.classList.add("hidden")
     homeButton.classList.remove("hidden")
@@ -51,6 +60,22 @@ function getSavedCoverView() {
   fullFormView.classList.add("hidden")
   }
 
+function getHomeView() {
+  homeView.classList.remove("hidden")
+  savedView.classList.add("hidden")
+  fullFormView.classList.add("hidden")
+  homeButton.classList.add("hidden")
+  randomCoverButton.classList.remove("hidden")
+  saveCoverButton.classList.remove("hidden")
+}
+
+function makeNewBook() {
+  event.preventDefault();
+  covers.push(inputCover.value);
+  titles.push(inputTitle.value);
+  descriptors.push(inputDescriptor1.value);
+  descriptors.push(inputDescriptor2.value);
+}
 
 
 // We've provided one function to get you started
