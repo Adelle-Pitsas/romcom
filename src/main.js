@@ -60,6 +60,9 @@ function getSavedCoverView() {
   savedView.classList.remove("hidden")
   homeView.classList.add("hidden")
   fullFormView.classList.add("hidden")
+  randomCoverButton.classList.add("hidden")
+  saveCoverButton.classList.add("hidden")
+  homeButton.classList.remove("hidden")
   }
 
 function getHomeView() {
