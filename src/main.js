@@ -16,6 +16,8 @@ var inputTitle = document.querySelector("#title")
 var inputDescriptor1 = document.querySelector("#descriptor1")
 var inputDescriptor2 = document.querySelector("#descriptor2")
 var createNewBookButton = document.querySelector(".create-new-book-button")
+var savedViewSection = document.querySelector(".saved-covers-section")
+
 // We've provided a few variables below
 var savedCovers = [
   new Cover("http://3.bp.blogspot.com/-iE4p9grvfpQ/VSfZT0vH2UI/AAAAAAAANq8/wwQZssi-V5g/s1600/Do%2BNot%2BForsake%2BMe%2B-%2BImage.jpg", "Sunsets and Sorrows", "sunsets", "sorrows")
@@ -63,7 +65,18 @@ function getSavedCoverView() {
   randomCoverButton.classList.add("hidden")
   saveCoverButton.classList.add("hidden")
   homeButton.classList.remove("hidden")
+
+  for(var i = 0; i < savedCovers.length; i++) {
+    savedViewSection.innerHTML += `
+    <div class = "mini-cover" id = "${savedCovers[i].id}">
+    <img id="mini-cover" class="cover-image" src="${savedCovers[i].cover}">
+    <h2 id="mini-title" class="cover-title">${savedCovers[i].title}</h2>
+    <h3 id="mini-tagline" class="tagline"> A tale of <span id="mini-tagline1" class="tagline-1">${savedCovers[i].tagline1}</span> and <span id="mini-tagline2" class="tagline-2">${savedCovers[i].tagline2}</span></h3>
+    <img id="mini-price-tag" class="price-tag">
+    <img id="mini-price-tag" class="overlay">
+  `
   }
+}
 
 function getHomeView() {
   homeView.classList.remove("hidden")
@@ -99,16 +112,6 @@ function saveCurrentCover() {
     }
   }
   savedCovers.push(currentCover)
-
-  var savedViewSection = document.querySelector(".saved-covers-section")
-  savedViewSection.classList.add("mini-cover")
-  savedViewSection.innerHTML += `
-    <img id="mini-cover" class="cover-image">
-    <h2 id="mini-title" class="cover-title"></h2>
-    <h3 id="mini-tagline" class="tagline"><span id="mini-tagline1" class="tagline-1"></span> and <span id="mini-tagline2" class="tagline-2"></span></h3>
-    <img id="mini-price-tag" class="price-tag">
-    <img id="mini-price-tag" class="overlay">
-  `
 }
 
 
