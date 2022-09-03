@@ -21,7 +21,7 @@ var savedCovers = [
   new Cover("http://3.bp.blogspot.com/-iE4p9grvfpQ/VSfZT0vH2UI/AAAAAAAANq8/wwQZssi-V5g/s1600/Do%2BNot%2BForsake%2BMe%2B-%2BImage.jpg", "Sunsets and Sorrows", "sunsets", "sorrows")
 ];
 
-var currentCover
+var currentCover =
 
 // Add your event listeners here 👇
 randomCoverButton.addEventListener("click", generateRandomCover);
@@ -33,6 +33,8 @@ viewSavedButton.addEventListener("click", getSavedCoverView);
 homeButton.addEventListener("click", getHomeView);
 
 createNewBookButton.addEventListener("click", makeNewBook)
+
+saveCoverButton.addEventListener("click", saveCurrentCover)
 
 // Create your event handlers and other functions here 👇
 function getRandomIndex(array) {
@@ -82,6 +84,16 @@ function makeNewBook() {
   coverTitle.innerText = inputTitle.value
   tagLine1.innerText = inputDescriptor1.value
   tagLine2.innerText = inputDescriptor2.value
+}
+
+function saveCurrentCover() {
+  var currentCover = new Cover(inputCover.value, inputTitle.value, inputDescriptor1.value, inputDescriptor2.value)
+  for (var i = 0; i < savedCovers.length; i++) {
+    if (currentCover.id !== savedCovers[i]) {
+      savedCovers.push(currentCover)
+    }
+  }
+
 }
 
 
