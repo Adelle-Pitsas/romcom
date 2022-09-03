@@ -96,7 +96,21 @@ function saveCurrentCover() {
     }
   }
   savedCovers.push(currentCover)
+
+  var savedViewSection = document.querySelector(".saved-covers-section")
+  savedViewSection.classList.add("mini-cover")
+  savedViewSection.innerHTML += `
+    <img id="mini-cover" class="cover-image">
+    <h2 id="mini-title" class="cover-title"></h2>
+    <h3 id="mini-tagline" class="tagline"><span id="mini-tagline1" class="tagline-1"></span> and <span id="mini-tagline2" class="tagline-2"></span></h3>
+    <img id="mini-price-tag" class="price-tag">
+    <img id="mini-price-tag" class="overlay">
+  `
 }
+
+
+
+
 
 
 // We've provided one function to get you started
