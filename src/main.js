@@ -1,5 +1,5 @@
 // Create variables targetting the relevant DOM elements here 👇
-var coverImgSrc = document.querySelector('.cover-image')
+var coverImage = document.querySelector('.cover-image')
 var coverTitle = document.querySelector('.cover-title')
 var tagLine1 = document.querySelector('.tagline-1')
 var tagLine2 = document.querySelector('.tagline-2')
@@ -42,7 +42,7 @@ function getRandomIndex(array) {
 }
 
 function generateRandomCover() {
-  coverImgSrc.src = covers[getRandomIndex(covers)]
+  coverImage.src = covers[getRandomIndex(covers)]
   coverTitle.innerText = titles[getRandomIndex(titles)]
   tagLine1.innerText = descriptors[getRandomIndex(descriptors)]
   tagLine2.innerText = descriptors[getRandomIndex(descriptors)]
@@ -80,20 +80,22 @@ function makeNewBook() {
   var newCover = new Cover(inputCover.value, inputTitle.value, inputDescriptor1.value, inputDescriptor2.value)
   fullFormView.classList.add("hidden")
   homeView.classList.remove("hidden")
-  coverImgSrc.src = inputCover.value
+  coverImage.src = inputCover.value
   coverTitle.innerText = inputTitle.value
   tagLine1.innerText = inputDescriptor1.value
   tagLine2.innerText = inputDescriptor2.value
 }
 
 function saveCurrentCover() {
-  var currentCover = new Cover(inputCover.value, inputTitle.value, inputDescriptor1.value, inputDescriptor2.value)
-  for (var i = 0; i < savedCovers.length; i++) {
-    if (currentCover.id !== savedCovers[i]) {
-      savedCovers.push(currentCover)
+  var currentCover = new Cover(coverImage.src, coverTitle.innerText, tagLine1.innerText, tagLine2.innerText)
+  var currentCoverString = `${currentCover.cover}${currentCover.title}${currentCover.tagline1}${currentCover.tagline2}`
+    for (var i = 0; i < savedCovers.length; i++) {
+      var savedCoversString = `${savedCovers[i].cover}${savedCovers[i].title}${savedCovers[i].tagline1}${savedCovers[i].tagline2}`
+      if (currentCoverString === savedCoversString) {
+      return
     }
   }
-
+  savedCovers.push(currentCover)
 }
 
 
