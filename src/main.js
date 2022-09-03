@@ -63,7 +63,18 @@ function getSavedCoverView() {
   randomCoverButton.classList.add("hidden")
   saveCoverButton.classList.add("hidden")
   homeButton.classList.remove("hidden")
+
+  var miniCover = document.querySelector("#mini-cover")
+  var miniTitle = document.querySelector("#mini-title")
+  var miniTagline1 = document.querySelector("#mini-tagline1")
+  var miniTagline2 = document.querySelector("#mini-tagline2")
+  for (var i = 0; i < savedCovers.length; i++) {
+      miniCover.src = savedCovers[i].cover
+      miniTitle.innerText = savedCovers[i].title
+      miniTagline1.innerText = savedCovers[i].tagline1
+      miniTagline2.innerText = savedCovers[i].tagline2
   }
+}
 
 function getHomeView() {
   homeView.classList.remove("hidden")
@@ -101,11 +112,13 @@ function saveCurrentCover() {
   savedCovers.push(currentCover)
 
   var savedViewSection = document.querySelector(".saved-covers-section")
-  savedViewSection.classList.add("mini-cover")
-  savedViewSection.innerHTML += `
+  savedCoversArraySection = document.createElement("section")
+  savedViewSection.appendChild(savedCoversArraySection)
+  savedCoversArraySection.classList.add("mini-cover")
+  savedCoversArraySection.innerHTML += `
     <img id="mini-cover" class="cover-image">
     <h2 id="mini-title" class="cover-title"></h2>
-    <h3 id="mini-tagline" class="tagline"><span id="mini-tagline1" class="tagline-1"></span> and <span id="mini-tagline2" class="tagline-2"></span></h3>
+    <h3 id="mini-tagline" class="tagline"> A tale of <span id="mini-tagline1" class="tagline-1"></span> and <span id="mini-tagline2" class="tagline-2"></span></h3>
     <img id="mini-price-tag" class="price-tag">
     <img id="mini-price-tag" class="overlay">
   `
