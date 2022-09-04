@@ -15,8 +15,8 @@ var inputCover = document.querySelector("#cover");
 var inputTitle = document.querySelector("#title");
 var inputDescriptor1 = document.querySelector("#descriptor1");
 var inputDescriptor2 = document.querySelector("#descriptor2");
-var createNewBookButton = document.querySelector(".create-new-book-button");
-var savedViewSection = document.querySelector(".saved-covers-section");
+var createNewBookButton = document.querySelector(".create-new-book-button")
+var savedViewSection = document.querySelector(".saved-covers-section")
 
 
 
