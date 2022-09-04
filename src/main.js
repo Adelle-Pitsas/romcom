@@ -118,6 +118,10 @@ function makeNewBook() {
   coverTitle.innerText = inputTitle.value
   tagLine1.innerText = inputDescriptor1.value
   tagLine2.innerText = inputDescriptor2.value
+
+
+  
+  getHomeView()
 }
 
 function saveCurrentCover() {
