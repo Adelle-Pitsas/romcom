@@ -28,6 +28,8 @@ var savedCovers = [
 var currentCover;
 
 // Add your event listeners here 👇
+window.addEventListener("load", generateRandomCover);
+
 randomCoverButton.addEventListener("click", generateRandomCover);
 
 makeCoverButton.addEventListener("click", getFormView);
