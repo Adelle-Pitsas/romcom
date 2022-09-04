@@ -40,7 +40,7 @@ createNewBookButton.addEventListener("click", makeNewBook)
 
 saveCoverButton.addEventListener("click", saveCurrentCover)
 
-// savedViewSection.addEventListener("dblclick", removeCover)
+savedViewSection.addEventListener("dblclick", removeCover)
 
 // Create your event handlers and other functions here 👇
 function getRandomIndex(array) {
@@ -128,14 +128,15 @@ function saveCurrentCover() {
   }
 }
 
+function removeCover(event) {
+  var coverToRemove = Number(event.target.parentNode.id)
+  for (var i = 0; i < savedCovers.length; i++)
+    if (coverToRemove === savedCovers[i].id) {
+      savedCovers.splice(i,1)
+    }
+  getSavedCoverView()
+}
 
-// function removeCover(event) {
-//   var coverToRemove = event.target.parentNode.id
-//   for (var i = 0; i < savedCovers.length; i++)
-//     if (coverToRemove === savedCovers[i].id) {
-//       savedCovers.splice(i,1)
-//     }
-// }
 
 
 
