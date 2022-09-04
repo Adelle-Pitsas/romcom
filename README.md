@@ -12,7 +12,8 @@ This website creates random romance novel covers. It allows the user to create t
 - Click and drag HTML to your browser to see real time changes
 
 ### Preview of App:
-[//]: <> (Provide ONE gif or screenshot of your application - choose the "coolest" piece of functionality to show off.)
+[//]: <> 
+https://videoapi-muybridge.vimeocdn.com/animated-thumbnails/image/066d6b6e-d06c-4529-a38b-86d4853591a6.gif?ClientID=vimeo-core-prod&Date=1662324746&Signature=3a93062c4931f8739943e99dbb32826825a94e7e
 
 ### Context:
 [//]: <>
