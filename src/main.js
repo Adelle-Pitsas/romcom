@@ -1,8 +1,8 @@
 // Create variables targetting the relevant DOM elements here 👇
 var coverImage = document.querySelector('.cover-image')
 var coverTitle = document.querySelector('.cover-title')
-var tagLine1 = document.querySelector('.tagline-1')
-var tagLine2 = document.querySelector('.tagline-2')
+var tagline1 = document.querySelector('.tagline-1')
+var tagline2 = document.querySelector('.tagline-2')
 var randomCoverButton = document.querySelector('.random-cover-button')
 var makeCoverButton = document.querySelector('.make-new-button')
 var homeView = document.querySelector(".home-view")
@@ -17,7 +17,7 @@ var inputDescriptor1 = document.querySelector("#descriptor1")
 var inputDescriptor2 = document.querySelector("#descriptor2")
 var createNewBookButton = document.querySelector(".create-new-book-button")
 var savedViewSection = document.querySelector(".saved-covers-section")
-var miniCover = document.querySelector(".mini-cover")
+
 
 
 // We've provided a few variables below
@@ -50,13 +50,13 @@ function getRandomIndex(array) {
 function generateRandomCover() {
   coverImage.src = covers[getRandomIndex(covers)]
   coverTitle.innerText = titles[getRandomIndex(titles)]
-  tagLine1.innerText = descriptors[getRandomIndex(descriptors)]
-  tagLine2.innerText = descriptors[getRandomIndex(descriptors)]
+  tagline1.innerText = descriptors[getRandomIndex(descriptors)]
+  tagline2.innerText = descriptors[getRandomIndex(descriptors)]
   currentCover = new Cover (
     coverImage.src,
     coverTitle.innerText,
-    tagLine1.innerText,
-    tagLine2.innerText,
+    tagline1.innerText,
+    tagline2.innerText,
   )
   return currentCover
 }
@@ -117,8 +117,8 @@ function makeNewBook() {
 
   coverImage.src = inputCover.value
   coverTitle.innerText = inputTitle.value
-  tagLine1.innerText = inputDescriptor1.value
-  tagLine2.innerText = inputDescriptor2.value
+  tagline1.innerText = inputDescriptor1.value
+  tagline2.innerText = inputDescriptor2.value
 
    getHomeView()
 }
