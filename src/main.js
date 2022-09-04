@@ -67,6 +67,7 @@ function getFormView() {
     homeButton.classList.remove("hidden")
     randomCoverButton.classList.add("hidden")
     saveCoverButton.classList.add("hidden")
+    savedView.classList.add("hidden")
   }
 
 function getSavedCoverView() {
@@ -111,17 +112,12 @@ function makeNewBook() {
 
   currentCover = new Cover(inputCover.value, inputTitle.value, inputDescriptor1.value, inputDescriptor2.value)
 
-  fullFormView.classList.add("hidden")
-  homeView.classList.remove("hidden")
-
   coverImage.src = inputCover.value
   coverTitle.innerText = inputTitle.value
   tagLine1.innerText = inputDescriptor1.value
   tagLine2.innerText = inputDescriptor2.value
 
-
-  
-  getHomeView()
+   getHomeView()
 }
 
 function saveCurrentCover() {
