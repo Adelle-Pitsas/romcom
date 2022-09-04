@@ -78,7 +78,10 @@ function getSavedCoverView() {
   randomCoverButton.classList.add("hidden")
   saveCoverButton.classList.add("hidden")
   homeButton.classList.remove("hidden")
+  displayCovers()
+}
 
+function displayCovers(){
   var displaySavedCovers = ""
   for(var i = 0; i < savedCovers.length; i++) {
     displaySavedCovers += `
