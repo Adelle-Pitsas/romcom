@@ -1,5 +1,7 @@
 # RomCom  
 
+This is a pulse check to make sure my git workflow is working
+
 ### Abstract:
 [//]: <>
 This website creates random romance novel covers. It allows the user to create their own romance covers and allows the user to create a list of saved covers that can be curated however they want.
